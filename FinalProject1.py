@@ -6,6 +6,12 @@ from matplotlib.figure import Figure
 import random
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 
+#Ew. zamiast liczyc odleglosci miedzy voxelami a punktami mozna wyliczyc dla pktow scipy.spatial.Delaunay ( triangulacje Delaunaya )
+#Dla N wymiarowej przestrzeni zrzuca N wymiarowa triangulacje czyli dziala dla 3D
+#Wynik to będzie lista punktow ktore mozna polaczyc korzystajac z scipy.spatial.ConvexHull
+#Np. https://stackoverflow.com/questions/27270477/3d-convex-hull-from-point-cloud
+#Wtedy rysowanie GUI byłoby płynniejsze bo nie musiałby renderować obiektow 3D tylko linie.
+
 #3D:
 #Początkowy zestaw punktow do Voronoi3D:
 rozmiar_diagramu = 30
